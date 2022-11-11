@@ -9,7 +9,7 @@ public with sharing class navigationinboxDashController {
             throw new AuraHandledException(e.getMessage());
         }
     }
-    
+    //list
     @AuraEnabled
     public static id getdraftlistViews(){
         try {
