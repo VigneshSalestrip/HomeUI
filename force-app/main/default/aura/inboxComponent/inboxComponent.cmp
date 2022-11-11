@@ -1,0 +1,39 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<div>
+        <lightning:verticalNavigation selectedItem="Expense_Pending_Approval">
+            <lightning:card>
+                         <lightning:verticalNavigationSection label="Inbox" >        
+         
+                <lightning:verticalNavigationItemIcon
+                                                      label="Expense - Pending Approval"
+                                                      name="Expense_Pending_Approval" 
+                                                      iconName="standard:approval"
+                                                     />
+                
+                <lightning:verticalNavigationItemIcon
+                                                      label="Expense - Draft"
+                                                      name="Expense_Draft"
+                                                      iconName="standard:drafts" 
+                                                      />
+                
+                <lightning:verticalNavigationItemIcon
+                                                      label="Expense - Receipt Unattached"
+                                                      name="Expense_Receipt_Unattached" 
+                                                      iconName="standard:read_receipts" />
+                
+                <lightning:verticalNavigationItemIcon
+                                                      label="Card UnMapped Transactions"
+                                                      name="Card_UnMapped_Transactions" 
+                                                      iconName="standard:product_transfer_state" />
+                
+                <lightning:verticalNavigationItemIcon
+                                                  label="No. Of Action Items"
+                                                  name="No._Of_Action_Items" 
+                                                  iconName="standard:bundle_policy" />
+            </lightning:verticalNavigationSection>
+            </lightning:card>
+            
+            
+        </lightning:verticalNavigation>
+    </div>
+</aura:component>

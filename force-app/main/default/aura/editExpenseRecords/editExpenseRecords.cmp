@@ -1,0 +1,86 @@
+<aura:component controller = "sampleTestExpenseController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="Expense" type="list"/>
+    <aura:attribute name="number" type="integer" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="editData" type="boolean"/>
+
+
+    <div class="slds slds-p-around_large">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered" style="border:1px #ddd solid;">
+            <thead>
+                <tr>
+                    <td colspan="5">
+                        <div style="display:block; text-align:center;">
+                            <aura:if isTrue="{!!v.editData}">
+                                <lightning:button label="Edit" variant="brand" onclick="{!c.dataEditAction}"/>
+                            </aura:if>
+                            
+                            <aura:if isTrue="{!v.editData}">
+                                <lightning:button variant="brand" label="Save" onclick="{!c.dataSaveAction}"/>
+                                <lightning:button variant="destructive" label="Cancel" onclick="{!c.dataCancelAction}"/>
+                            </aura:if>
+                        </div>
+
+                    </td>
+                </tr>
+                <tr>
+                    <th style="background:#ddd;">Name</th>
+                    <th style="background:#ddd;">Type</th>
+                    <th style="background:#ddd;">Status</th>
+                    <th style="background:#ddd;">Payment Method</th>
+                    <th style="background:#ddd;">Owner</th>
+                </tr>
+            </thead>
+            <tbody>
+                <aura:if isTrue="{!!v.editData}">
+                    <aura:iteration items="{!v.Expense}" var="Items">
+                        <tr>
+                            <td>{!Items.Name}</td>
+                            <td>{!Items.salestrip__Type__c}</td>
+                            <td>{!Items.salestrip__Status__c}</td>
+                            <td>{!Items.salestrip__Payment_Method__c}</td>
+                            <td>{!Items.OwnerId}</td>
+                        </tr>
+                    </aura:iteration>
+                </aura:if>
+
+                <aura:if isTrue="{!v.editData}">
+                    <aura:iteration items="{!v.Expense}" var="Items">
+                        <tr>
+                            <td>
+                                <lightning:input value="{!Items.Name}"/>
+                            </td>
+                            <td>
+                                <lightning:input value="{!Items.salestrip__Type__c}"/>
+                            </td>
+                            <td>
+                                <lightning:input value="{!Items.salestrip__Status__c}"/>
+                            </td>
+                            <td>
+                                <lightning:input value="{!Items.salestrip__Payment_Method__r.Name}"/>
+                            </td>
+                            <td>
+                                <lightning:input value="{!Items.Owner.Name}"/>
+                            </td>
+                        </tr>
+                    </aura:iteration>
+                </aura:if>
+                <tr>
+                    <td colspan="4">
+                        <div style="display:block; text-align:center;">
+                            <aura:if isTrue="{!!v.editData}">
+                                <lightning:button label="Edit" variant="brand" onclick="{!c.dataEditAction}"/>
+                            </aura:if>
+                            
+                            <aura:if isTrue="{!v.editData}">
+                                <lightning:button variant="brand" label="Save" onclick="{!c.dataSaveAction}"/>
+                                <lightning:button variant="destructive" label="Cancel" onclick="{!c.dataCancelAction}"/>
+                            </aura:if>
+                        </div>
+                    </td>
+             
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</aura:component>	

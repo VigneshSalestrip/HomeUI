@@ -1,0 +1,57 @@
+<aura:component controller="navigationinboxDashController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="draft" type="integer" />
+    <aura:attribute name="pendingapp" type="integer" />
+    <aura:attribute name="exprdraft" type="integer" />
+    <aura:attribute name="exprpendingapp" type="integer" />
+    <aura:attribute name="pendingreim" type="integer" />
+    <lightning:navigation aura:id="navService" />
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}" />
+    <lightning:card>
+    <div>
+        <lightning:verticalNavigation selectedItem="recent">
+            <lightning:verticalNavigationSection label="Inbox" >  
+                            <a onclick="{!c.draftitem}">
+                                <lightning:verticalNavigationItemBadge label="Expense - Draft" name="Expense_Draft" badgeCount="{!v.draft}" />
+                            </a>
+                            <a onclick="{!c.pendingitem}">
+                                <lightning:verticalNavigationItemBadge label="Expense - Pending Approval" name="Expense_Pending_Approval" badgeCount="{!v.pendingapp}" />
+                            </a>
+                            <a onclick="{!c.reportdraft}">
+                                <lightning:verticalNavigationItemBadge label="Expense Report - Draft" name="Expense_Report_Draft" badgeCount="{!v.exprdraft}" />
+                            </a>
+                            <a onclick="{!c.reportpending}">
+                                <lightning:verticalNavigationItemBadge label="Expense Report - Pending Approval" name="Expense_Report_Pending_Approval" badgeCount="{!v.exprpendingapp}" />
+                            </a>
+                            <a onclick="{!c.pendingreimbursement}">
+                                <lightning:verticalNavigationItemBadge label="Expense - Pending Reimbursement" name="Expense_Pending_Reimbursement" badgeCount="{!v.pendingreim}" />
+                            </a>
+                            
+                        
+                        </lightning:verticalNavigationSection>
+
+                        
+                        <lightning:verticalNavigationSection label="Dashboard">
+                            <a onclick="{!c.reimburseditem}">
+                                <lightning:verticalNavigationItemIcon label="Reimbursed" name="Expense_Reimbursed" iconName="standard:partner_marketing_budget" />
+                            </a>
+                            <a onclick="{!c.receiptitem}">
+                                <lightning:verticalNavigationItemIcon label="Receipt Unattached" name="Expense_Receipt_Unattached" iconName="standard:read_receipts" />
+                            </a>
+                            <a onclick="{!c.cardunmapped}">
+                                <lightning:verticalNavigationItemIcon label="Card UnMapped Transctions" name="Expense_Card_UnMapped_Transactions" iconName="standard:product_transfer_state" />
+                            </a>
+                            <a onclick="{!c.bulkexpense}">
+                                <lightning:verticalNavigationItemIcon label="Bulk Expense Approval" name="Bulk_Expense_Approval" iconName="custom:custom15" />
+                            </a>
+                            <a onclick="{!c.reviewmy}">
+                                <lightning:verticalNavigationItemIcon label="Review My Expenses" name="Review_My_Expenses" iconName="standard:user_role" />
+                            </a>
+                            <a onclick="{!c.creditImport}">
+                                <lightning:verticalNavigationItemIcon label="Credit Card Import" name="Expense_Report" iconName="standard:expense_report" />
+                            </a>
+
+                        </lightning:verticalNavigationSection>
+        </lightning:verticalNavigation>
+    </div>
+</lightning:card>
+</aura:component>

@@ -1,0 +1,40 @@
+<aura:component controller="sampleTestExpenseController">
+    <aura:attribute name="salestrip__Expense__c" type="List" />
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}" />
+    <div  class="slds slds-p-around_large slds-card">
+        <h2><lightning:icon iconName="standard:approval"></lightning:icon>Expense - Draft</h2>
+
+        <table class="slds-table slds-table--bordered slds-table--col-bordered slds-table--striped slds-table--cell-buffer slds-table--fixed-layout" style="border:1px #ddd solid;" >
+            <thead>
+                <tr class="slds-text-heading--label">
+                   <th style="background:#ffeded;">Expense</th>
+                 <th>Type</th>
+                 <th>Status</th>
+                 <th>Payment Method</th>
+                 <th>Owner</th>
+                </tr>
+           </thead>
+           <tbody>
+
+            <aura:iteration items="{!v.salestrip__Expense__c}" var="exp">
+                <tr>
+
+
+                 
+                     <td><div class="slds-truncate">{!exp.Name}</div></td>
+                     <td><div class="slds-truncate">{!exp.salestrip__Type__c}</div></td>
+                     <td><div class="slds-truncate" >{!exp.salestrip__Status__c}</div></td>
+                      <td><div class="slds-truncate" >{!exp.salestrip__PaymentMethod__r.Name}</div></td>
+                      <td><div class="slds-truncate" >{!exp.Owner.Name}</div></td>
+
+                </tr>
+                
+            
+
+              </aura:iteration>
+            </tbody>
+        
+        </table>
+    </div>
+
+</aura:component>	

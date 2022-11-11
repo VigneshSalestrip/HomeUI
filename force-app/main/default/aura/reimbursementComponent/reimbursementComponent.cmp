@@ -1,0 +1,21 @@
+<aura:component controller="reimbursementControllerApex" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<aura:attribute name="title" type="String" default=" Reimbursement"/>
+    <aura:attribute name="totalreimburse" type="integer" default="3"/>
+    <aura:attribute name="totalreimburseamount" type="decimal" default="1000" />
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}" /> 
+
+    <lightning:card>
+        <aura:set attribute="title">
+            <lightning:icon iconName="custom:custom41" class="slds-p-horizontal_medium" size="medium"/> 
+          <h2>{! v.title }</h2>  
+        </aura:set>
+        <div>
+            <p class="slds-p-horizontal_medium" >Total Reimbursement Records:  {!v.totalreimburse} </p>  <br/>
+        <p class="slds-p-horizontal_medium">Total Reimbursement Amount : {!v.totalreimburseamount} </p> 
+        
+        </div>
+       
+
+        
+    </lightning:card>
+</aura:component>

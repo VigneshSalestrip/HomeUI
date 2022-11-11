@@ -1,0 +1,19 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<aura:attribute name="title" type="String" default=" Opportunity"/>
+    <aura:attribute name="totalopportunity" type="integer" default="3"/>
+    <aura:attribute name="totalopamount" type="decimal" default="120" />
+
+    <lightning:card>
+    
+        <aura:set attribute="title">
+            <lightning:icon iconName="standard:opportunity" class="slds-p-horizontal_medium" size="medium"/> 
+            {! v.title }
+        </aura:set>
+            <p class="slds-p-horizontal_medium" >Total Opportunities :  {!v.totalopportunity} </p>  <br/>
+        <p class="slds-p-horizontal_medium">Total Opportunity Amount : {!v.totalopamount} </p> 
+        
+      
+       
+        
+    </lightning:card>
+</aura:component>
