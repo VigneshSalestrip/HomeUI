@@ -3,18 +3,15 @@
     <aura:attribute name="totalexpenses" type="integer" Default="5" />
     <aura:attribute name="totalamount" type="decimal" />
     <aura:handler name="init" value="{!this}" action="{!c.doinit}" /> 
-
+   <div class="custom">
     <lightning:card>
         <aura:set attribute="title">
             <lightning:icon iconName="custom:custom17" size="medium"/> 
             {! v.title }
         </aura:set>
-            <p>Total Expense Record :  {!v.totalexpenses} </p>  <br/>
-        <p>Total Expense Amount : {!v.totalamount} </p> 
-        
-        
-       
-
-        
+         <p class="slds-p-horizontal_medium">Total Expense Record :  {!v.totalexpenses} </p>  <br/>
+        <p class="slds-p-horizontal_medium">Total Expense Amount : {!v.totalamount} </p> 
+         
     </lightning:card>
+</div>
 </aura:component>

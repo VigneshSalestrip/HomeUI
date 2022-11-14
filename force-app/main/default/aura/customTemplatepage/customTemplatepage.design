@@ -1,0 +1,14 @@
+<design:component label="navigation_2right">
+    <flexipage:template>
+        <flexipage:region name="header" defaultWidth="Large" />
+        <flexipage:region name="left_col"  defaultWidth="Large" />
+        <flexipage:region name="right_col"  defaultWidth="Large" />
+        <flexipage:region name="right_col1"  defaultWidth="Large" />
+        <flexipage:region name="right_col2"  defaultWidth="Large" />
+        <flexipage:region name="footer"  defaultWidth="Large" />
+           
+
+    </flexipage:template>
+  
+
+</design:component>

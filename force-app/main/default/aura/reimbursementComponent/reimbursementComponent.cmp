@@ -3,19 +3,14 @@
     <aura:attribute name="totalreimburse" type="integer" default="3"/>
     <aura:attribute name="totalreimburseamount" type="decimal" default="1000" />
     <aura:handler name="init" value="{!this}" action="{!c.doinit}" /> 
-
+    <div class="custom">
     <lightning:card>
         <aura:set attribute="title">
-            <lightning:icon iconName="custom:custom41" class="slds-p-horizontal_medium" size="medium"/> 
-          <h2>{! v.title }</h2>  
+            <lightning:icon iconName="custom:custom41" class="slds-p-horizontal_medium" size="medium"/> <strong>{!v.title }</strong>  
         </aura:set>
-        <div>
-            <p class="slds-p-horizontal_medium" >Total Reimbursement Records:  {!v.totalreimburse} </p>  <br/>
+    
+        <p class="slds-p-horizontal_medium" >Total Reimbursement Records:  {!v.totalreimburse} </p>  <br/>
         <p class="slds-p-horizontal_medium">Total Reimbursement Amount : {!v.totalreimburseamount} </p> 
-        
-        </div>
-       
-
-        
     </lightning:card>
+  </div>
 </aura:component>
