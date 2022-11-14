@@ -1,3 +1,4 @@
-.THIS {
-    width:320px;
+.THIS .custom {
+    width: auto;
+    height: fit-content;
 }

@@ -1,0 +1,37 @@
+<aura:component implements="lightning:appHomeTemplate" description="Main columnwidth">
+    <aura:attribute name="header" type="Aura.Component[]" />
+    <aura:attribute name="left_col" type="Aura.Component[]" />
+    <aura:attribute name="right_col" type="Aura.Component[]" />
+    <aura:attribute name="right_col1" type="Aura.Component[]" />
+    <aura:attribute name="right_col2" type="Aura.Component[]" />
+    <aura:attribute name="footer" type="Aura.Component[]" />
+ 
+
+    <!-- Header 
+     <aura:attribute name="header" type="Aura.Component[]" /> -->
+
+    <div class="customwidth">
+      
+        <lightning:layout>
+            <lightning:layoutItem size="{! $Browser.isDesktop ? '4' : '12' }" class="">
+                {!v.left_col}
+            </lightning:layoutItem>
+            <lightning:layoutItem size="{! $Browser.isDesktop ? '4' : '12' }" class="">
+                {!v.right_col}
+            </lightning:layoutItem>
+            <lightning:layoutItem size="{! $Browser.isDesktop ? '4' : '12' }" class="">
+                {!v.right_col1}
+            </lightning:layoutItem>
+            <lightning:layout>
+               <lightning:layoutItem size="{! $Browser.isDesktop ? '4' : '12' }" class="">
+                {!v.right_col2}
+                </lightning:layoutItem>
+            </lightning:layout>
+
+        </lightning:layout>
+
+        
+        
+    </div>
+    
+</aura:component>
