@@ -1,32 +1,13 @@
 <aura:component>
-    <div class="demo-only" style="width:320px">
-        <nav class="slds-nav-vertical" aria-label="Sub page">
-          <div class="slds-nav-vertical__section">
-            <h2 id="entity-header" class="slds-nav-vertical__title">Reports</h2>
-            <ul aria-describedby="entity-header">
-              <li class="slds-nav-vertical__item slds-is-active">
-                <a href="#" class="slds-nav-vertical__action" aria-current="true">
-                    
-                    <lightning:icon  iconName="standard:account" alternativeText="Connected" title="x-small"></lightning:icon> <h3 class="slds-nav-vertical__title">  Recent</h3> 
+  <aura:attribute name="setattr" type="boolean" default="false" />
+  <aura:if isTrue="{!v.setattr}">
+    <lightning:dynamicIcon type="trend" option="up" alternativeText="Trending down"/>
+    <aura:set attribute="else">
+      <lightning:dynamicIcon type="trend" option="down" alternativeText="Trending down"/>
+    </aura:set>
 
-                  <span class="slds-badge slds-col_bump-left">
-                    <span class="slds-assistive-text">:</span>3
-                    <span class="slds-assistive-text">New Items</span>
-                  </span>
-                
-                </a>
-              </li>
-              <li class="slds-nav-vertical__item">
-                <a href="#" class="slds-nav-vertical__action">
-                    <lightning:icon iconName="standard:account" size="small"></lightning:icon> <strong class="slds-m-left--x-small">Salestrip</strong>
-                    <span class="slds-badge slds-col_bump-left">
-                        <lightning:icon iconName="utility:new_window" size="x-small"></lightning:icon>
-                       
-                      </span>
-                </a>
-              </li>
-              </ul>
-              </div>
-              </nav>
-              </div>
-</aura:component>	
+  </aura:if>
+  <lightning:button label="Click" onclick="{!c.handleclick}" />
+    
+</aura:component>
+

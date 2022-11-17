@@ -2,6 +2,13 @@
 	<aura:attribute name="title" type="String" default=" Expense"/>
     <aura:attribute name="totalexpenses" type="integer" Default="5" />
     <aura:attribute name="totalamount" type="decimal" />
+    <aura:attribute name="currentMonthRecord" type="integer" />
+    <aura:attribute name="lastMonthRecord" type="decimal" />
+    <aura:attribute name="currentMonthAmount" type="decimal" />
+    <aura:attribute name="lastMonthAmount" type="decimal" />
+    <aura:attribute name="setBoolean" type="boolean" />
+    <aura:attribute name="amountBoolean" type="boolean" />
+
     <aura:handler name="init" value="{!this}" action="{!c.doinit}" /> 
    <div class="custom">
     <lightning:card>
@@ -10,8 +17,20 @@
             {! v.title }
         </aura:set>
          <p class="slds-p-horizontal_medium">Total Expense Record :  {!v.totalexpenses} </p>  <br/>
-        <p class="slds-p-horizontal_medium">Total Expense Amount : {!v.totalamount} </p> 
-         
+        <p class="slds-p-horizontal_medium">Total Expense Amount : {!v.totalamount} </p>  <br/>
+        <aura:if isTrue="{!v.setBoolean}">
+            <p class="slds-p-horizontal_medium">Expense This Month: {!v.currentMonthRecord} ( <lightning:dynamicIcon type="trend" option="up" alternativeText="Trending down"/> {!v.lastMonthRecord})</p>  <br/>
+           <aura:set attribute="else">
+            <p class="slds-p-horizontal_medium">Expense This Month: {!v.currentMonthRecord} ( <lightning:dynamicIcon type="trend" option="down" alternativeText="Trending down"/> {!v.lastMonthRecord})</p>  <br/>
+           </aura:set>
+        </aura:if>
+        <aura:if isTrue="{!v.amountBoolean}">
+            <p class="slds-p-horizontal_medium"> Expense Amount This Month : {!v.currentMonthAmount} ( <lightning:dynamicIcon type="trend" option="up" alternativeText="Trending down"/> {!v.lastMonthAmount})</p>  <br/>
+            <aura:set attribute="else">
+            <p class="slds-p-horizontal_medium"> Expense Amount This Month : {!v.currentMonthAmount} ( <lightning:dynamicIcon type="trend" option="down" alternativeText="Trending down"/> {!v.lastMonthAmount})</p>  <br/>
+            </aura:set>
+        </aura:if>
+       
     </lightning:card>
 </div>
 </aura:component>
