@@ -1,5 +1,7 @@
 ({
     doinit : function(component, event, helper) {
+
+        /*
          var number = component.get("c.getReimburse");
         console.log("Enter 1");
         
@@ -21,7 +23,7 @@
         });
         $A.enqueueAction(getamount);
         console.log("Enter 4");
-
+         */
         var cmonth=component.get("c.getCurrentMonth");
         cmonth.setCallback(this, function(response) 
                            { 
@@ -56,7 +58,8 @@
         cmonthamount.setCallback(this, function(response) 
                            { 
                                var currentmonthamount =  response.getReturnValue();
-                               component.set("v.currentMonthAmount",currentmonthamount);
+                               var conCurrAmount=$A.localizationService.formatCurrency(currentmonthamount);
+                               component.set("v.currentMonthAmount",conCurrAmount);
                            });
         console.log("Enter 4");
         $A.enqueueAction(cmonthamount);
