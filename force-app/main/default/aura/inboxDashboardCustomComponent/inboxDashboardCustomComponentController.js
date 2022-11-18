@@ -13,7 +13,7 @@
         console.log("Entered 3");
           
           
-            // Sets the route to /lightning/o/Account/home
+           
         var pageReference = {
             type: 'standard__objectPage',
             attributes: {
@@ -51,7 +51,6 @@
         console.log("Entered 3");
           
           
-            // Sets the route to /lightning/o/Account/home
         var pageReference = {
             type: 'standard__objectPage',
             attributes: {
@@ -89,7 +88,6 @@
         console.log("Entered 3");
           
           
-            // Sets the route to /lightning/o/Account/home
         var pageReference = {
             type: 'standard__objectPage',
             attributes: {
@@ -126,7 +124,7 @@
         console.log("Entered 3");
           
           
-            // Sets the route to /lightning/o/Account/home
+            
         var pageReference = {
             type: 'standard__objectPage',
             attributes: {
@@ -163,7 +161,7 @@
         console.log("Entered 3");
           
           
-            // Sets the route to /lightning/o/Account/home
+          
         var pageReference = {
             type: 'standard__objectPage',
             attributes: {
@@ -201,7 +199,7 @@
         console.log("Entered 3");
           
           
-            // Sets the route to /lightning/o/Account/home
+     
         var pageReference = {
             type: 'standard__objectPage',
             attributes: {
@@ -237,8 +235,7 @@
             var navService = component.find("navService");
         console.log("Entered 3");
           
-          
-            // Sets the route to /lightning/o/Account/home
+       
         var pageReference = {
             type: 'standard__objectPage',
             attributes: {
@@ -273,13 +270,10 @@
             
             var navService = component.find("navService");
         console.log("Entered 3");
-          
-          
-            // Sets the route to /lightning/o/Account/home
         var pageReference = {
             type: 'standard__objectPage',
             attributes: {
-                objectApiName:'salestrip__Expense__c',
+                objectApiName:'salestrip__Transaction__c',
                 actionName: 'list'
             },
             state:{
@@ -303,9 +297,6 @@
          
 		 var navService = component.find("navService");
        
-          
-          
-            // Sets the route to /lightning/o/Account/home
          var pageReference = {
             type: 'standard__navItemPage',
             attributes: {
@@ -322,11 +313,7 @@
 	
 	reviewmy: function(component, event, helper) {
 		var navService = component.find("navService");
-       
-          
-          
-		// Sets the route to /lightning/o/Account/home
-	 var pageReference = {
+	   var pageReference = {
 		type: 'standard__navItemPage',
 		attributes: {
 			apiName:'salestrip__ReviewMyExpenses'
@@ -338,11 +325,7 @@
     },
 
 	creditImport: function(component, event, helper) {
-		var navService = component.find("navService");
-       
-          
-          
-		// Sets the route to /lightning/o/Account/home
+		var navService = component.find("navService"); 
 	 var pageReference = {
 		type: 'standard__navItemPage',
 		attributes: {

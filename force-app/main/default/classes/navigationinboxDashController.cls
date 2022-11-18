@@ -79,7 +79,7 @@ public with sharing class navigationinboxDashController {
     @AuraEnabled
     public static id getCardUnmappedlistViews(){
         try {
-            id listviews =[SELECT Id FROM ListView WHERE SobjectType='salestrip__Expense__c'and name ='Card UnMapped Transactions' WITH SECURITY_ENFORCED].id;
+            id listviews =[SELECT Id FROM ListView WHERE SobjectType='salestrip__Transaction__c'and name ='Card UnMapped Transactions' WITH SECURITY_ENFORCED].id;
             system.debug('List View ====>'+ listviews);
             return listviews;
             
