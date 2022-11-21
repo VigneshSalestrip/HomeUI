@@ -1,0 +1,34 @@
+<aura:component implements="lightning:appHomeTemplate" description="Main columnwidth">
+    <aura:attribute name="header" type="Aura.Component[]" />
+    <aura:attribute name="left_col" type="Aura.Component[]" />
+    <aura:attribute name="middle_col" type="Aura.Component[]" />
+    <aura:attribute name="right_col" type="Aura.Component[]" />
+    <aura:attribute name="footer" type="Aura.Component[]" />
+ 
+
+    
+
+    <div >  
+
+      
+        <lightning:layout  multipleRows="True" >
+             <lightning:layoutItem size="{! $Browser.isDesktop ? '4' : '12' }" >
+                {!v.left_col}
+            </lightning:layoutItem>
+            <lightning:layoutItem size="{! $Browser.isDesktop ? '4' : '12' }" padding="horizontal-small">
+                {!v.middle_col}
+            </lightning:layoutItem>
+            <lightning:layoutItem size="{! $Browser.isDesktop ? '4' : '12' }">
+                {!v.right_col}
+            </lightning:layoutItem>
+                 
+         
+         
+
+        </lightning:layout>
+
+      
+        
+    </div>
+    
+</aura:component>
