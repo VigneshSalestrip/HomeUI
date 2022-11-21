@@ -21,17 +21,17 @@
         <p class="slds-p-horizontal_medium">Total Expense Amount : {!v.totalamount} </p>  <br/>
         -->
         <aura:if isTrue="{!v.setBoolean}">
-            <p class="slds-p-horizontal_medium">Expenses This Month: {!v.currentMonthRecord} ( <lightning:dynamicIcon type="trend" option="up" alternativeText="Trending down"/> {!v.lastMonthRecord})</p>  <br/>
+            <p class="slds-p-horizontal_medium">Expenses This Month: {!v.currentMonthRecord} ( <lightning:icon iconName="utility:arrowup" class="green" size="x-small" alternativeText="Trending down"/> {!v.lastMonthRecord})</p>  <br/>
            <aura:set attribute="else">
-            <p class="slds-p-horizontal_medium">Expenses This Month: {!v.currentMonthRecord} ( <lightning:dynamicIcon type="trend" option="down" alternativeText="Trending down"/> {!v.lastMonthRecord})</p>  <br/>
+            <p class="slds-p-horizontal_medium">Expenses This Month: {!v.currentMonthRecord} ( <lightning:icon iconName="utility:arrowdown" class="red" size="x-small" alternativeText="Trending down"/> {!v.lastMonthRecord})</p>  <br/>
            </aura:set>
         </aura:if>
         <aura:if isTrue="{!v.amountBoolean}">
             <p class="slds-p-horizontal_medium"> Expense Amount This Month : {!v.currentMonthAmount} ( 
-                <lightning:dynamicIcon type="trend" option="up" alternativeText="Trending down"/>{!v.lastMonthAmount})
+                <lightning:icon iconName="utility:arrowup" class="green" size="x-small" alternativeText="Trending down"/>{!v.lastMonthAmount})
             </p>  <br/>
             <aura:set attribute="else">
-            <p class="slds-p-horizontal_medium"> Expense Amount This Month : {!v.currentMonthAmount} (<lightning:dynamicIcon type="trend" option="down" alternativeText="Trending down"/> {!v.lastMonthAmount})</p>  
+            <p class="slds-p-horizontal_medium"> Expense Amount This Month : {!v.currentMonthAmount} (<lightning:icon iconName="utility:arrowdown" class="red" size="x-small" alternativeText="Trending down"/> {!v.lastMonthAmount})</p>  
             </aura:set>
         </aura:if>
        

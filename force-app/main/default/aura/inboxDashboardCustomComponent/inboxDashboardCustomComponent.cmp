@@ -118,15 +118,16 @@
                       </span>
                 </a>
               </li>
+              <!--
               <li class="slds-nav-vertical__item">
                 <a onclick="{!c.creditImport}" class="slds-nav-vertical__action">
-                    <lightning:icon iconName="standard:expense_report" size="small"></lightning:icon> <strong class="slds-m-left--x-small">Credit Card Import</strong>
+                    <lightning:icon iconName="standard:expense_report" size="small"></lightning:icon> <strong class="slds-m-left-x-small">Credit Card Import</strong>
                     <span class="slds-badge slds-col_bump-left">
                         <lightning:icon iconName="utility:new_window" size="x-small"></lightning:icon>
                        
                       </span>
                 </a>
-              </li>
+              </li>  -->
               </ul>
               </div>
              </nav>

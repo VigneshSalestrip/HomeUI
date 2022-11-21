@@ -322,8 +322,8 @@
 	   };
 
 	   navService.navigate(pageReference);
-    },
-
+    }, 
+    /*
 	creditImport: function(component, event, helper) {
 		var navService = component.find("navService"); 
 	 var pageReference = {
@@ -336,7 +336,7 @@
 
 	   navService.navigate(pageReference);
 	},
-
+    */
     //Update Notifications badge
     doinit: function(component, event, helper){
 
