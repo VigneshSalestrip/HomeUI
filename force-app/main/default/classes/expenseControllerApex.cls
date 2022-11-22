@@ -1,15 +1,15 @@
 public with sharing class expenseControllerApex {
-    public static decimal currentMonthcount;
-    public static decimal currentMonthRecords;
-    public static decimal lastMonthRecords;
-    public static decimal sumNull;
-    public static decimal result;
-    public static decimal resultround;
-    public static decimal currentMonthRecordAmount;
-    public static decimal result2;
-    public static decimal resultround2;
-    public static decimal nulvalue1;
-    public static decimal nulvalue2;
+    public static decimal currentMonthcount; //This Month Expense Count Store
+    public static decimal currentMonthRecords; // This Month Expense Record Count Store
+    public static decimal lastMonthRecords; //Last Month Expense Record Count
+    public static decimal sumNull; // When sum(amount) == null and assign to 0;
+    public static decimal result; // Formula Result 
+    public static decimal resultround; // Round off (2)
+    public static decimal currentMonthRecordAmount; //This Month Expense Record Amount Store
+    public static decimal result2; // Formula Result 
+    public static decimal resultround2; // Round off (2)
+    public static decimal nulvalue1; // Used to store (Current Month Amount)
+    public static decimal nulvalue2; // Used to store (last Month Amount)
     
 
   /*
@@ -36,6 +36,7 @@ public with sharing class expenseControllerApex {
     }
      */
     //Comparison 
+    //Get Current month Expense Record Count
     @AuraEnabled
     public static decimal getCurrentMonth(){
         
@@ -50,18 +51,19 @@ public with sharing class expenseControllerApex {
         system.debug('THIS Month Records ===>'+ currentMonth);
         return currentMonthcount;
     }
+    //Get Current and Last Month Expense Count
     @AuraEnabled
     public static decimal getCurrentLastExpenseRecord(){
         decimal currMonth=[SELECT count() FROM salestrip__Expense__c where salestrip__Date__c  = THIS_MONTH and (salestrip__Status__c !='Reimbursed' and salestrip__Status__c !='Cancelled') ];
         decimal lastRec=[select count() from salestrip__Expense__c where salestrip__Date__c = LAST_MONTH and (salestrip__Status__c !='Reimbursed' and salestrip__Status__c !='Cancelled')];
         
         system.debug(lastRec);
-        if(currMonth !=null){
+        if(currMonth !=null){     //check the null
             
             currentMonthRecords=currMonth;
 
         }else{
-            currMonth=0;
+            currMonth=0; 
             currentMonthRecords=currMonth;
 
         }
@@ -96,14 +98,14 @@ public with sharing class expenseControllerApex {
         
         return resultround;
     }
-
+    //Get the SUM(Amount) for Current Amount Expense
     @AuraEnabled
     public static decimal getcurrentMonthAmount(){
         List<AggregateResult> currentMonthAmount=[SELECT SUM(salestrip__Amount__c) doc  FROM salestrip__Expense__c where salestrip__Date__c  = THIS_MONTH and (salestrip__Status__c !='Reimbursed' and salestrip__Status__c !='Cancelled') ];
         system.debug('THIS Month Records ===>'+ currentMonthAmount);
-        String str1 = String.valueOf(currentMonthAmount[0].get('doc')) ;
+        String str1 = String.valueOf(currentMonthAmount[0].get('doc')) ; // Intially, it stores 'String'
         if(str1 != null){
-            sumNull=Decimal.valueOf(str1) ;
+            sumNull=Decimal.valueOf(str1) ; //Covert from string to Decimal
 
         }else{
             sumNull=0;
@@ -125,7 +127,7 @@ public with sharing class expenseControllerApex {
             nulvalue1=0;
 
         }
-         currentMonthRecordAmount=nulvalue1;
+         currentMonthRecordAmount=nulvalue1; // Assign to Current Month Amount
         String str3 = String.valueOf(lastMonthAmount[0].get('amt')) ;
         if(str3 !=null){
            

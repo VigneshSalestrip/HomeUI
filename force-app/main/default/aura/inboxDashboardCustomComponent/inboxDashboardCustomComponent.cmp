@@ -1,16 +1,16 @@
 <aura:component controller="navigationinboxDashController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
-    <aura:attribute name="draft" type="integer" />
-    <aura:attribute name="pendingapp" type="integer" />
-    <aura:attribute name="exprdraft" type="integer" />
-    <aura:attribute name="exprpendingapp" type="integer" />
-    <aura:attribute name="pendingreim" type="integer" />
-    <lightning:navigation aura:id="navService" />
-    <aura:handler name="init" value="{!this}" action="{!c.doinit}" />
+    <aura:attribute name="draft" type="integer" /> <!--Count Draft Records-->
+    <aura:attribute name="pendingapp" type="integer" /> <!--Pending Approval Records Count-->
+    <aura:attribute name="exprdraft" type="integer" /> <!--Expense Report Draft status Count-->
+    <aura:attribute name="exprpendingapp" type="integer" /> <!--Expense Report Pending Approval status Count-->
+    <aura:attribute name="pendingreim" type="integer" /> <!--Expense Pending Reimbursemet status Count-->
+    <lightning:navigation aura:id="navService" /> <!--Nagivation - Used in js Controller-->
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}" /> <!--Initial Page load data-->
    <lightning:card>
     <div class="demo-only ">
         <nav class="slds-nav-vertical" aria-label="Sub page">
-          <div class="slds-nav-vertical__section">
-            <h2 id="entity-header" class="slds-nav-vertical__title">Inbox</h2>
+          <div class="slds-nav-vertical__section"> <!--Vertical Navigation-->
+            <h2 id="entity-header" class="slds-nav-vertical__title">Inbox</h2> <!--Title - Inbox-->
             <ul aria-describedby="entity-header">
               <li class="slds-nav-vertical__item">
                 <a onclick="{!c.draftitem}" class="slds-nav-vertical__action" >
@@ -93,7 +93,7 @@
               </li>
               <li class="slds-nav-vertical__item">
                 <a onclick="{!c.cardunmapped}" class="slds-nav-vertical__action">
-                    <lightning:icon iconName="standard:product_transfer_state" size="small"></lightning:icon> <strong class="slds-m-left--x-small">Card UnMapped Transctions</strong>
+                    <lightning:icon iconName="standard:product_transfer_state" size="small"></lightning:icon> <strong class="slds-m-left--x-small">Card Unmapped Transactions</strong>
                     <span class="slds-badge slds-col_bump-left">
                         <lightning:icon iconName="utility:new_window" size="x-small"></lightning:icon>
                        
@@ -111,7 +111,7 @@
               </li>
               <li class="slds-nav-vertical__item">
                 <a onclick="{!c.reviewmy}" class="slds-nav-vertical__action">
-                    <lightning:icon iconName="standard:user_role" size="small"></lightning:icon> <strong class="slds-m-left--x-small">Review My Expenses</strong>
+                    <lightning:icon iconName="standard:user_role" size="small"></lightning:icon> <strong class="slds-m-left--x-small">Review my Expenses</strong>
                     <span class="slds-badge slds-col_bump-left">
                         <lightning:icon iconName="utility:new_window" size="x-small"></lightning:icon>
                        

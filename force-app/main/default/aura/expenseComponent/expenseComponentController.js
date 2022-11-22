@@ -26,6 +26,7 @@
         console.log("Enter 4");
         $A.enqueueAction(number2);
       */
+        // Get Current Month Expense Count
         var cmonth=component.get("c.getCurrentMonth");
         cmonth.setCallback(this, function(response) 
                            { 
@@ -34,7 +35,7 @@
                            });
         console.log("Enter 4");
         $A.enqueueAction(cmonth);
-
+        //Get Current & last Month Expense Count Comparison
         var lmonth=component.get("c.getCurrentLastExpenseRecord");
         lmonth.setCallback(this, function(response) 
                            { 
@@ -55,7 +56,7 @@
                            });
         console.log("Enter 4");
         $A.enqueueAction(lmonth);
-
+       // Get Current Month Expense Amount
         var cmonthamount=component.get("c.getcurrentMonthAmount");
         cmonthamount.setCallback(this, function(response) 
                            { 
@@ -65,7 +66,7 @@
                            });
         console.log("Enter 4");
         $A.enqueueAction(cmonthamount);
-
+        //Get Current & last Month Expense Amount Comparison
         var lmonthamount=component.get("c.getlastMonthAmount");
         lmonthamount.setCallback(this, function(response) 
                            { 

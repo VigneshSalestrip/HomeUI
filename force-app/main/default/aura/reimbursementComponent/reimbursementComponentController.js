@@ -1,4 +1,4 @@
-({
+({  //Initialize 
     doinit : function(component, event, helper) {
 
         /*
@@ -24,6 +24,8 @@
         $A.enqueueAction(getamount);
         console.log("Enter 4");
          */
+
+        //Get Current Month Expense Reimbursed Count 
         var cmonth=component.get("c.getCurrentMonth");
         cmonth.setCallback(this, function(response) 
                            { 
@@ -32,18 +34,18 @@
                            });
         console.log("Enter 4");
         $A.enqueueAction(cmonth);
-
+        // Get Current & last Month Expense Reimbursed Count Comparison 
         var lmonth=component.get("c.getCurrentLastExpenseRecord");
         lmonth.setCallback(this, function(response) 
                            { 
                             
                                var lastmonthrecord=response.getReturnValue();
-                               var convertPercent=$A.localizationService.formatPercent(lastmonthrecord);
+                               var convertPercent=$A.localizationService.formatPercent(lastmonthrecord); // Format to percent (x 100)
                                console.log(convertPercent);
                                if(lastmonthrecord>0){
                                   
                                   component.set("v.setBoolean","true");
-                                  component.set("v.lastMonthRecord",convertPercent);
+                                  component.set("v.lastMonthRecord",convertPercent); //Set to the Attribute
 
                                }else{
                                  
@@ -53,7 +55,7 @@
                            });
         console.log("Enter 4");
         $A.enqueueAction(lmonth);
-
+       //Get Current Month Expense Reimbursed Amount (Spend) 
         var cmonthamount=component.get("c.getcurrentMonthAmount");
         cmonthamount.setCallback(this, function(response) 
                            { 
@@ -64,6 +66,7 @@
         console.log("Enter 4");
         $A.enqueueAction(cmonthamount);
 
+        //Get Current & last Month Expense Reimbursed Amount Comparison
         var lmonthamount=component.get("c.getlastMonthAmount");
         lmonthamount.setCallback(this, function(response) 
                            { 

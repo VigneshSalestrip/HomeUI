@@ -1,15 +1,15 @@
 public with sharing class reimbursementControllerApex {
-    public static decimal currentMonthcount;
-    public static decimal currentMonthRecords;
-    public static decimal lastMonthRecords;
-    public static decimal result;
-    public static decimal resultround;
-    public static decimal currentMonthRecordAmount;
-    public static decimal result2;
-    public static decimal resultround2;
-    public static decimal nulvalue1;
-    public static decimal nulvalue2;
-    public static decimal nulvalue3;
+    public static decimal currentMonthcount; //This Month Expense Count Store
+    public static decimal currentMonthRecords; // This Month Expense Record Count Store
+    public static decimal lastMonthRecords; //Last Month Expense Record Count
+    public static decimal result; // Formula Result 
+    public static decimal resultround; // Round off (2)
+    public static decimal currentMonthRecordAmount; //This Month Expense Record Amount Store
+    public static decimal result2; // Formula Result 
+    public static decimal resultround2; // Round off (2)
+    public static decimal nulvalue1;   // Store currentMonthAmount in getcurrentMonthAmount Method
+    public static decimal nulvalue2; //Store currMonthAmount
+    public static decimal nulvalue3; // Store lastMonthAmount
 
   /*
     @AuraEnabled
