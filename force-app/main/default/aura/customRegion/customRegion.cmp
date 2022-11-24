@@ -6,16 +6,13 @@
 
     <div>
         <lightning:layout>
-            <lightning:layoutItem flexibility="grow"
-                                  class="slds-m-right_small">
+            <lightning:layoutItem size="{! $Browser.isDesktop ? '3' : '12' }" >
                 {!v.left}
             </lightning:layoutItem>
-            <lightning:layoutItem size="{! $Browser.isDesktop ? '4' : '12' }"
-                                  class="">
+            <lightning:layoutItem size="{! $Browser.isDesktop ? '4' : '12' }" padding="horizontal-small">
                 {!v.mid}
             </lightning:layoutItem>
-            <lightning:layoutItem size="{! $Browser.isDesktop ? '4' : '6' }"
-                                  class="slds-m-left_small">
+            <lightning:layoutItem size="{! $Browser.isDesktop ? '5' : '12' }" >
                 {!v.right}
             </lightning:layoutItem>
         </lightning:layout>

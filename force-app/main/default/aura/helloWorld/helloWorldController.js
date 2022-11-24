@@ -1,5 +1,6 @@
 ({
-    myAction : function(component, event, helper) {
+    handleclick : function(component, event, helper) {
+        component.set("v.setattr",true);
 
     }
 })
