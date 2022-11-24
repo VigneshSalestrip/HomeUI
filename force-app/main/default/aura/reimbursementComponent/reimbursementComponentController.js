@@ -65,7 +65,6 @@
                            });
         console.log("Enter 4");
         $A.enqueueAction(cmonthamount);
-
         //Get Current & last Month Expense Reimbursed Amount Comparison
         var lmonthamount=component.get("c.getlastMonthAmount");
         lmonthamount.setCallback(this, function(response) 

@@ -11,7 +11,6 @@ public with sharing class expenseControllerApex {
     public static decimal nulvalue1; // Used to store (Current Month Amount)
     public static decimal nulvalue2; // Used to store (last Month Amount)
     
-
   /*
 
     @AuraEnabled

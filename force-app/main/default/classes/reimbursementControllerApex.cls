@@ -10,7 +10,6 @@ public with sharing class reimbursementControllerApex {
     public static decimal nulvalue1;   // Store currentMonthAmount in getcurrentMonthAmount Method
     public static decimal nulvalue2; //Store currMonthAmount
     public static decimal nulvalue3; // Store lastMonthAmount
-
   /*
     @AuraEnabled
     public static decimal getReimburseAmount(){

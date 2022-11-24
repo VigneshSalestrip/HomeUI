@@ -88,7 +88,7 @@ public with sharing class navigationinboxDashController {
         }
     }
 
-    // Badge Only
+    // Badge Only (number)
     @AuraEnabled
     public static integer getdraft(){
         try {

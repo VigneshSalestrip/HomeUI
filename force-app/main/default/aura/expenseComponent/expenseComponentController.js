@@ -26,7 +26,7 @@
         console.log("Enter 4");
         $A.enqueueAction(number2);
       */
-        // Get Current Month Expense Count
+        // Get Current Month Expense Count 
         var cmonth=component.get("c.getCurrentMonth");
         cmonth.setCallback(this, function(response) 
                            { 

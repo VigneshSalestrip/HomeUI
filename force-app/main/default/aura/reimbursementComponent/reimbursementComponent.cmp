@@ -29,6 +29,7 @@
             <aura:set attribute="else">
             <p class="slds-p-horizontal_medium"> Reimbursement Amount this month : {!v.currentMonthAmount} (<lightning:icon iconName="utility:arrowdown" class="red" size="x-small" alternativeText="Trending down"/> {!v.lastMonthAmount})</p>  
             </aura:set>
+            
         </aura:if>
     </lightning:card>
   </div>

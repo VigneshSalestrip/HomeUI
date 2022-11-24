@@ -1,4 +1,4 @@
-({  //Draft  
+({  //Draft 
     draftitem: function(component, event, helper) {
         var action= component.get("c.getdraftlistViews");
         action.setCallback(this,function(response){

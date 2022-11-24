@@ -8,7 +8,6 @@
     <aura:attribute name="lastMonthAmount" type="decimal" /> <!--Spend last Month-->
     <aura:attribute name="setBoolean" type="boolean" /> <!--Comparison Positive & Negative Records Count-->
     <aura:attribute name="amountBoolean" type="boolean" /> <!--Comparison Positive & Negative Amount -->
-
     <aura:handler name="init" value="{!this}" action="{!c.doinit}" />  <!--Initial page load data-->
    <div class="custom">
     <lightning:card>
@@ -34,7 +33,6 @@
             <p class="slds-p-horizontal_medium"> Spend this month : {!v.currentMonthAmount} (<lightning:icon iconName="utility:arrowdown" class="red" size="x-small" alternativeText="Trending down"/> {!v.lastMonthAmount})</p>  
             </aura:set>
         </aura:if>
-       
     </lightning:card>
-</div>
+   </div>
 </aura:component>
